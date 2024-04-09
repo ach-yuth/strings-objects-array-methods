@@ -310,7 +310,7 @@ console.log(mixtureOfColors(myColor));
 //power of two
 function poweOftWO(n) {
   const numbers = [];
-  for (let i = 0; i < n; i++) {
+  for (let i = 1; i < n; i++) {
     numbers.push(Math.pow(2, i));
   }
   return numbers;
@@ -331,10 +331,128 @@ console.log(oddNums(10));
 
 const arrayItems = ["apple", "banana", "watermelon", "kiwi"];
 
-const ba = arrayItems.push("pineapple");
+const newArray = arrayItems.push("pineapple");
 
-console.log(ba); // it just returns the length of an  array
+console.log(newArray); // it just returns the length of an  array
+
+// pineapple will stores in the arrayItems
+
+console.log(arrayItems);
 
 let a = 10;
 let b = a + 5;
 console.log(b);
+
+// sum of even numbers
+const sumOfEven = (nums) => {
+  let numCount = 0;
+
+  nums.filter((num) => {
+    if (num % 2 === 0) {
+      numCount = num + numCount;
+    }
+  });
+  return numCount;
+};
+console.log(sumOfEven([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+const products = [
+  {
+    name: "iphone",
+    price: 90000,
+    warranty: "two years",
+  },
+  {
+    name: "andriod",
+    price: 9000,
+    warranty: "one year",
+  },
+  {
+    name: "macBook",
+    price: 70000,
+    warranty: "two years",
+  },
+  {
+    name: "tab",
+    price: 50000,
+    warranty: "six months",
+  },
+];
+
+function lowBudgetProduct(data) {
+  let price = 0;
+  data.map((item) => {
+    if (price < item.price) {
+      price = item.price;
+    }
+  });
+  const filteredItem = data.filter((item) => {
+    if (price === item.price) {
+      return item;
+    }
+  });
+  return filteredItem;
+}
+console.log(lowBudgetProduct(products)[0]);
+
+function factorial(num) {
+  if (num === 0) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
+  }
+}
+console.log(factorial(6));
+
+//removal of duplicates from an array
+
+function removeDuplicates(arr) {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+console.log(removeDuplicates(["apple", "ball", "cat", "apple", "dog", "ball"]));
+
+//anagrams
+const naga = "listen";
+const gana = "silent";
+function anaram(str1, str2) {
+  const word1 = str1.split("").sort().join("");
+  const word2 = str2.split("").sort().join("");
+  return word1 === word2;
+}
+console.log(anaram(naga, gana));
+
+//multiples of three and five sum
+function multiplesOfThreeAndFive(num) {
+  let multiples = 0;
+  for (let i = 1; i < num; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      multiples = i + multiples;
+    }
+  }
+  return multiples;
+}
+console.log(multiplesOfThreeAndFive(20));
+
+//splicing of a string
+const name = "ramakanth";
+function newName(str) {
+  const letter = str.split("");
+  letter.splice(2, letter.length - 1, "hul");
+  return letter.join("");
+}
+console.log(newName(name));
+
+//consonanats count in a string
+const nam = "ramakanth";
+
+function count(str) {
+  let vowelsCount = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  str.split("").forEach((letter) => {
+    if (!vowels.includes(letter)) {
+      vowelsCount++;
+    }
+  });
+  return vowelsCount;
+}
+console.log(count(nam));
