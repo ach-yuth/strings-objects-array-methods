@@ -249,6 +249,8 @@ function longestFruit(fruits) {
 }
 console.log(longestFruit(fruits));
 
+// fruits which has more than three vowels
+
 const fruis = ["apple", "banana", "orange", "kiwi"];
 
 function fruitsWithMoreThanTwoVowels(fruits) {
@@ -356,6 +358,8 @@ const sumOfEven = (nums) => {
 };
 console.log(sumOfEven([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
+// returning the max price product from array
+
 const products = [
   {
     name: "iphone",
@@ -379,7 +383,7 @@ const products = [
   },
 ];
 
-function lowBudgetProduct(data) {
+function highBudgetProduct(data) {
   let price = 0;
   data.map((item) => {
     if (price < item.price) {
@@ -393,8 +397,9 @@ function lowBudgetProduct(data) {
   });
   return filteredItem;
 }
-console.log(lowBudgetProduct(products)[0]);
+console.log(highBudgetProduct(products)[0]);
 
+// factorial
 function factorial(num) {
   if (num === 0) {
     return 1;
